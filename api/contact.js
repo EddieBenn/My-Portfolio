@@ -16,7 +16,6 @@ const contactEmail = nodemailer.createTransport({
 
 
 export default async function handler(req, res) {
-console.log("GMAIL_USER:", process.env.GMAIL_USER);
   if (req.method === 'POST') {
     const { firstName, lastName, email, message, phone } = req.body;
     const name = `${firstName} ${lastName}`;
@@ -31,8 +30,8 @@ console.log("GMAIL_USER:", process.env.GMAIL_USER);
     };
 
     try {
-      await contactEmail.sendMail(mail);
-    console.log('Email sent successfully');
+      const emailResponse = await contactEmail.sendMail(mail);
+    console.log('Email sent successfully', emailResponse);
       res.status(200).json({ code: 200, status: "Message Sent" });
     } catch (error) {
       res.status(500).json({ error: "Error sending message" });
