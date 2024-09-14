@@ -8,7 +8,6 @@ export const sendMessage = async(body:any)=>{
             "Content-Type" : "application/json"
         }
       })
-      console.log(response)
     return response
     }catch(error:any){
       return error.response

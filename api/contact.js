@@ -30,8 +30,7 @@ export default async function handler(req, res) {
     };
 
     try {
-      const emailResponse = await contactEmail.sendMail(mail);
-    console.log('Email sent successfully', emailResponse);
+       await contactEmail.sendMail(mail);
       res.status(200).json({ code: 200, status: "Message Sent" });
     } catch (error) {
       res.status(500).json({ error: "Error sending message" });
