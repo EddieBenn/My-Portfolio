@@ -16,8 +16,8 @@ const config = (): Config => {
             secrets: {
                 apiHost:
                     environment === "development"
-                        ? "https://portfolio-eight-beta-28.vercel.app/"
-                        : "https://portfolio-eight-beta-28.vercel.app/"
+                        ? "https://edidiong-benn-portfolio.vercel.app/"
+                        : "https://edidiong-benn-portfolio.vercel.app/"
             },
         });
     }
