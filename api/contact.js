@@ -9,6 +9,9 @@ const contactEmail = nodemailer.createTransport({
     user: process.env.GMAIL_USER,
     pass: process.env.GMAIL_PASSWORD,
   },
+  tls: {
+    rejectUnauthorized: false,
+  },
 });
 
 contactEmail.verify((error) => {
@@ -23,9 +26,8 @@ export default async function handler(req, res) {
   if (req.method === 'POST') {
     const { firstName, lastName, email, message, phone } = req.body;
     const name = `${firstName} ${lastName}`;
-    console.log('i got here for vercel')
     const mail = {
-      from: name,
+      from: email,
       to: process.env.GMAIL_USER,
       subject: "Contact Form Submission - Portfolio",
       html: `<p>Name: ${name}</p>
