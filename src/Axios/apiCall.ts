@@ -1,8 +1,9 @@
-import axioz from 'axios';
+import axios from 'axios';
 
 export const sendMessage = async(body:any)=>{
     try{
-      const response = await axioz.post("http://localhost:3040/contact", body,{
+      const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
+      const response = await axios.post(`${API_BASE_URL}/contact`, body,{
         headers: {
             "Content-Type" : "application/json"
         }

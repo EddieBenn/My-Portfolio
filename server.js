@@ -11,12 +11,13 @@ const app = express();
 
 dotenv.config()
 
+const PORT = process.env.PORT || 3001
 app.use(cors());
 app.use(express.json());
 app.use("/", router);
 app.use(logger("dev"));
 
-app.listen(3040, () => console.log("Server Running"));
+app.listen(PORT, () => console.log("Server Running"));
 
 const contactEmail = nodemailer.createTransport({
   service: 'gmail',
