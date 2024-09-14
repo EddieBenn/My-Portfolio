@@ -19,7 +19,7 @@ const Projects = () => {
       description: "An electric vehicle acquisition platform that allows users to sign up as champions by completing various testing and verification stages. The platform currently supports over 40,000 users with role-based functionalities.",
       technologies: "TypeScript, JSON Web Token, PostgreSQL, Express.js, NestJS, InversifyJS, TypeORM, AWS, GCP, Node.js, Swagger, Knex.js, Zod and Docker.",
       image: max,
-      contribution: "I collaborated with other engineers and was an assitant lead on the backend.",
+      contribution: "I collaborated with other engineers and was an assistant lead on the backend.",
       projectUrl: "https://www.max.ng/",
     },
     {
