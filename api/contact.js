@@ -23,6 +23,7 @@ export default async function handler(req, res) {
   if (req.method === 'POST') {
     const { firstName, lastName, email, message, phone } = req.body;
     const name = `${firstName} ${lastName}`;
+    console.log('i got here for vercel')
     const mail = {
       from: name,
       to: process.env.GMAIL_USER,
