@@ -22,6 +22,8 @@ contactEmail.verify((error) => {
   }
 });
 
+console.log("GMAIL_USER:", process.env.GMAIL_USER);
+
 export default async function handler(req, res) {
   if (req.method === 'POST') {
     const { firstName, lastName, email, message, phone } = req.body;
@@ -38,6 +40,7 @@ export default async function handler(req, res) {
 
     try {
       await contactEmail.sendMail(mail);
+    console.log('Email sent successfully');
       res.status(200).json({ code: 200, status: "Message Sent" });
     } catch (error) {
       res.status(500).json({ error: "Error sending message" });
